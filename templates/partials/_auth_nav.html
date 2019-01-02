@@ -1,0 +1,16 @@
+<nav class="auth-nav">
+    {% if user.is_authenticated %}
+    <a href="javascript: {document.getElementById('logout').submit()}" class="nav-link">Logout</a>
+        <form action="{% url 'logout' %}" method="POST" id="logout">
+            {% csrf_token %}
+            <input type="hidden"/>
+        </form>
+        <a href="#">Welcome <em>{{ user.first_name }}</em> </a>
+    {% else %}
+    <a href="{% url 'register' %}" class="register-link">Register</a>
+    <a href="{% url 'login' %}" class="login-link">Login</a>
+    {% endif %}
+    {% if user.is_authenticated and user.is_superuser %}
+    <a href="/admin" class="admin-link">Admin</a>
+    {% endif %}
+</nav>

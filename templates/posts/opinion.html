@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Opinion Pieces{% endblock title %}
+{% block content %}
+<!--OPINION SECTION BEGINS BELOW-->
+<section class="opinion-section">   
+        <h2 class="section-title">Opinion</h2>
+        <div class="items">
+            {% if opinions %}
+            {% for post in opinions %}
+            <section class="item-section">
+                <h6 class="item-type">{{post.post_type}}</h6>
+                <h3 class="title">{{post.post_title}}</h3>
+                <h4 class="author">{{post.post_author}}</h4>
+                <p class="teaser first-para"> Lorem ipsum dolor sit amet consectetur adipisicing  <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
+                    more </em> <span class="read-more-arrow">&#10150;</span></a> </p>
+            </section>
+            {% endfor %}
+            {% endif %}
+            
+        </div>
+    </section>
+         <!--OPINION SECTION ENDS-->
+{% endblock %}

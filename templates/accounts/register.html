@@ -1,0 +1,29 @@
+
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %} | Register {% endblock %}
+
+{% block content %}
+<h2 class="page-title">Register</h2>
+
+<div class="register-form auth-form">
+    <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" placeholder="First Name">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" placeholder="Last Name">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Email">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Username">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Password">
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" name="confirm_password" placeholder="Confirm Password">
+        <label for="" class="empty-label"></label>
+        <input type="submit" value="Register Account">
+    </form>
+</div>
+{% endblock %}

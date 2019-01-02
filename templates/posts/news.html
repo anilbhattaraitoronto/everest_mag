@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} News{% endblock title %}
+{% block content %}
+<section class="news-section">
+        <h2 class="section-title">News</h2>
+        <div class="items">
+            {% if news_posts %}
+            {% for post in news_posts %}
+            <section class="item-section">
+                <h6 class="item-type">{{ post.post_type }}</h6>
+                <h3 class="title">{{ post.post_title }}</h3>
+                <h4 class="author">{{post.post_author}}</h4>
+                <p class="teaser first-para"> Lorem ipsum dolor sit amet consectetur adipisicing  <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
+                    more </em> <span class="read-more-arrow">&#10150;</span></a> </p>
+            </section>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+        <!--NEWS SECTION ENDS-->
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %} | Login {% endblock %}
+
+
+{% block content %}
+
+<h2 class="page-title">Login</h2>
+
+<div class="register-form auth-form">
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Username">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password">
+            <label for="" class="empty-label"></label>
+            <input type="submit" value="Login">
+    
+        </form>
+    </div>
+    {% endblock %}

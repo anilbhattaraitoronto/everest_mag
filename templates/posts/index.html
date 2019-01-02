@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block title %} Welcome {% endblock title %}
+{% block content %}
+<section class="ad1">
+        <p>Advertisements go here</p>
+    </section>
+    <main class="wrapper">
+
+        <!--NEWS SECTION BEGINS BELOW-->
+    <section class="news-section">
+        <h2 class="section-title">News</h2>
+        <div class="items">
+            {% if news_posts %}
+            {% for post in news_posts %}
+            <section class="item-section">
+                <h6 class="item-type">{{ post.post_type }}</h6>
+                <h3 class="title">{{ post.post_title }}</h3>
+                <h4 class="author">{{post.post_author}}</h4>
+                {% if post.post_photo_1 %}
+                <div class="item-image">
+                    <img src="{{ post.post_photo_1.url }}" alt="front-page photo" class="item-image">
+                </div>
+                {% endif %}
+                <p class="teaser first-para"> Lorem ipsum dolor sit amet consectetur adipisicing  <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
+                    more </em> <span class="read-more-arrow">&#10150;</span></a> </p>
+            </section>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+        <!--NEWS SECTION ENDS-->
+
+         <!--OPINION SECTION BEGINS BELOW-->
+     <section class="opinion-section">   
+        <h2 class="section-title">Opinion</h2>
+        <div class="items">
+            {% if opinion_posts %}
+            {% for post in opinion_posts %}
+            <section class="item-section">
+                <h6 class="item-type">{{post.post_type}}</h6>
+                <h3 class="title">{{post.post_title}}</h3>
+                <h4 class="author">{{post.post_author}}</h4>
+                {% if post.post_photo_1 %}
+                <div class="item-image">
+                    <img src="{{post.post_photo_1.url}}" alt="" class="item-image">
+                </div>
+                {% endif %}
+                <p class="teaser first-para"> Lorem ipsum dolor sit amet consectetur adipisicing  <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
+                    more </em> <span class="read-more-arrow">&#10150;</span></a> </p>
+            </section>
+            {% endfor %}
+            {% endif %}
+            
+        </div>
+    </section>
+         <!--OPINION SECTION ENDS-->
+
+         <!--IMAGE GALLERY SECTION BEGINS BELOW-->
+    <section class="image-gallery-section">
+        <div class="ad">
+            <p>Advertisements Go here</p>
+        </div>
+        <h2 class="section-title">Albums</h2>
+        {% if albums %}
+        {% for album in albums %}
+        <h3 class="sub-section-title">{{album.title}}</h3>
+        <div class="image-gallery">
+            <img src="{{album.image_1.url}}" alt="">
+            <img src="{{album.image_2.url}}" alt="">
+            <img src="{{album.image_3.url}}" alt="">
+            <img src="{{album.image_4.url}}" alt="">
+        </div>
+        {% endfor %}
+        {% endif %}
+    </section>
+         <!--IMAGE GALLERY SECTION ENDS-->
+
+         <!--VIDEO SECTION BEGINS BELOW-->
+    <section class="video-gallery-section">
+        <div class="ad">
+            <p>Advertisements Go here</p>
+        </div>
+        <h2 class="section-title">Videos</h2>
+        {% if videos %}
+        {% for video in videos %}
+        <div class="items">
+                <iframe src="{{video.video}}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </section>
+         <!--VIDEO SECTION ENDS-->
+
+         <!--EVENTS SECTION BEGINS BELOW-->
+    <section class="event-section">
+        <div class="ad">
+            <p>Advertisements Go here</p>
+        </div>
+        <h2 class="section-title">Events</h2>
+        <div class="items">
+            {% if upcoming_events %}
+            {% for event in upcoming_events %}
+            <section class="item-section">
+                <h6 class="item-type">{{event.post_type}}</h6>
+                <h3 class="title">{{ event.post_title }}</h3>
+                <h4 class="event-date">{{ event.event_date }}</h4>
+                {% if event.post_photo_1 %}
+                <div class="item-image">
+                    <img src="{{ event.post_photo_1.url}}" alt="Event Photo" class="item-image">
+                </div>
+                {% endif %}
+                <p class="teaser first-para"> Lorem ipsum dolor sit amet consectetur adipisicing  <a href="{% url 'post' event.id %}" class="read-more-link"><em> Read
+                        more </em> <span class="read-more-arrow">&#10150;</span></a> </p>
+            </section>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+         <!--EVENTS SECTION ENDS-->
+         {% include 'partials/_editorial_team.html' %}
+</main>
+{% endblock %}
