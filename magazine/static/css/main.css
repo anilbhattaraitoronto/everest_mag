@@ -89,10 +89,10 @@ body{
 }
 .section-title, .sub-section-title{
     text-align: center;
-    background: linear-gradient(to right, var(--theme-color1), var(--theme-color3), var(--theme-color2));
-    color: white;
+    /* background: linear-gradient(to right, var(--theme-color1), var(--theme-color3), var(--theme-color2)); */
+    color: var(--theme-color2);
     max-width: fit-content;
-    margin: 10px 0;
+    margin: 10px auto;
     padding: 0px 10px;
 }
 
@@ -188,6 +188,85 @@ footer{
     margin-top: 20px;
     color: white;
 }
+
+/* auth forms styles*/
+
+
+/* Search Form*/
+.search-form form {
+    margin: 0 auto;
+    width: 90%;
+  }
+  
+  .search-form h3 {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .search-form form,
+  .auth-form form,
+  .inquiry-form form {
+    padding: 1px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-gap: 5px;
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: right;
+  }
+  .search-form {
+    margin: 10px auto;
+    padding: 20px 0;
+    border: 1px solid green;
+    max-width: 700px;
+  }
+  .inquiry-form {
+    margin: 20px auto;
+  }
+  .inquiry-form h3 {
+    color: green;
+    text-align: center;
+    padding: 20px;
+  }
+  .search-form form label,
+  .auth-form form label,
+  .inquiry-form label {
+    background: steelblue;
+    color: white;
+  }
+  .search-form form input,
+  .search-form form select,
+  .search-form form label,
+  .auth-form form input,
+  .auth-form form label,
+  .inquiry-form label,
+  .inquiry-form input,
+  .inquiry-form textarea {
+    border: 1px solid black;
+    outline: none;
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .search-form .empty-label,
+  .auth-form .empty-label,
+  .inquiry-form .empty-label {
+    background: white;
+    border: none;
+  }
+  input[type="submit"] {
+    background: steelblue;
+    padding: 5px 0;
+    border-radius: 3px;
+    border: 1px solid green;
+    color: white;
+    font-weight: bold;
+  }
+  input[type="submit"]:hover {
+    box-shadow: 2px 2px 6px black;
+  }
+
+/* AUTH FORM Styles END*/
 @media only screen and (min-width:900px){
     .wrapper{
         display: grid;

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
     'accounts.apps.AccountsConfig',
     'posts.apps.PostsConfig',
     'django.contrib.admin',
@@ -127,7 +128,3 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-try:
-    from local_settings import *
-except ImportError as e:
-    pass

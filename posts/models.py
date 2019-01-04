@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from ckeditor.fields import RichTextField
 
 class Post (models.Model):
     TYPES = (
@@ -12,17 +13,15 @@ class Post (models.Model):
     post_title = models.CharField(max_length=100)
     post_author = models.CharField(max_length=40, blank=True)
     post_date = models.DateTimeField(verbose_name='Posted Date', blank=True)
-    post_keywords=models.CharField(blank=True, max_length=100)
     post_photo_1=models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-    post_youtube_video_src=models.URLField(verbose_name='Youtube Embed Url in src', blank=True)
-    text_content_1=models.TextField()
-    sub_heading_1=models.CharField(max_length=30, blank=True)
-    post_photo_2=models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-    text_content_2=models.TextField(blank=True)
-    sub_heading_2=models.CharField(max_length=30, blank=True)
-    post_photo_3=models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-    text_content_3=models.TextField(blank=True)
-    event_date=models.CharField(max_length=60, blank=True)
+    text_content_1=RichTextField()
+    # sub_heading_1=models.CharField(max_length=30, blank=True)
+    # post_photo_2=models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    # text_content_2=models.TextField(blank=True)
+    # sub_heading_2=models.CharField(max_length=30, blank=True)
+    # post_photo_3=models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    # text_content_3=models.TextField(blank=True)
+    # event_date=models.CharField(max_length=60, blank=True)
     is_latest=models.BooleanField(default=True)
 
     def __str__(self):
