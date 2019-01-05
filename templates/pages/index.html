@@ -2,16 +2,22 @@
 {% block title %} Welcome {% endblock title %}
 {% block content %}
     
-
+{% if advert1 %}
+{% for advert in advert1 %}
+<section class="ad">
+    <h3 class="ad-title">{{ advert.title }}</h3>
+    <img src="{{ advert.photo_1.url }}" alt="Ad Image" class="ad-image1">
+    <p class="ad-description">{{ advert.description }}</p>
+    <img src="{{ advert.photo_2.url }}" alt="Ad Image" class="ad-image2">
+    <p class="ad-contact">{{ advert.contact_info }}</p>
+</section>
+{% endfor %}
+{% endif %}
     <main class="wrapper">
-    
-    {% if advert1 %}
-        <section class="ad1">
-            <p>Advertisements go here</p>
-        </section>
-    {% endif %}
+        
         <!--EVENTS SECTION BEGINS BELOW-->
         <section class="event-section">
+              
             
             <h2 class="section-title">Upcoming Events</h2>
             <div class="items">
@@ -26,7 +32,7 @@
                         <img src="{{ event.post_photo_1.url}}" alt="Event Photo" class="item-image">
                     </div>
                     {% endif %}
-                    {{ event.content|safe|truncatewords:8 }} <a href="{% url 'post' event.id %}" class="read-more-link"><em> Read
+                    {{ event.content|safe|truncatewords:8 }} <a href="{% url 'event_post' event.id %}" class="read-more-link"><em> Read
                             more </em> <span class="read-more-arrow">&#10150;</span></a>
                 </section>
                 {% endfor %}
@@ -38,7 +44,7 @@
 
         <!--NEWS SECTION BEGINS BELOW-->
     <section class="news-section">
-        <h2 class="section-title">News</h2>
+        <a href="{% url 'news' %}"> <h2 class="section-title">News</h2></a>
         <div class="items">
             {% if news_posts %}
             {% for post in news_posts %}
@@ -51,7 +57,7 @@
                     <img src="{{ post.post_photo_1.url }}" alt="front-page photo" class="item-image">
                 </div>
                 {% endif %}
-                {{ post.content|truncatewords:8|safe }} <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
+                {{ post.content|safe|truncatewords:8 }} <a href="{% url 'news_post' post.id %}" class="read-more-link"><em> Read
                     more </em> <span class="read-more-arrow">&#10150;</span></a>
             </section>
             {% endfor %}
@@ -112,7 +118,7 @@
     
          <!--OPINION SECTION BEGINS BELOW-->
      <section class="opinion-section">   
-            <h2 class="section-title">Opinion</h2>
+           <a href="{% url 'opinion' %}"> <h2 class="section-title">Opinion</h2></a>
             <div class="items">
                 {% if opinion_posts %}
                 {% for post in opinion_posts %}
@@ -125,7 +131,7 @@
                         <img src="{{post.post_photo_1.url}}" alt="" class="item-image">
                     </div>
                     {% endif %}
-                    {{ post.content|truncatewords:8|safe }} <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
+                    {{ post.content|truncatewords:8|safe }} <a href="{% url 'opinion_post' post.id %}" class="read-more-link"><em> Read
                         more </em> <span class="read-more-arrow">&#10150;</span></a> 
                 </section>
                 {% endfor %}

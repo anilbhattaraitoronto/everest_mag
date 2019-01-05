@@ -1,0 +1,13 @@
+
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}Everest Mag | Admin{% endblock %}
+
+{% block branding %}
+<a href="{% url 'index' %}">
+<img src="{% static 'img/logo.jpg' %}" class="admin-image" alt="" width="120"></a>
+<h1 id="site-name"><a href="{% url 'admin:index' %}">  Everest Magazine Site Administration</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

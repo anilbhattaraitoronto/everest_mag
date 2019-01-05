@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %} News {% endblock title %}
 {% block content %}
 <section class="news-section">
@@ -7,10 +8,10 @@
             {% if news_posts %}
             {% for post in news_posts %}
             <section class="archive">
-                <a href="{% url 'post' post.id %}" class="read-more-link title"><h3 class="title">{{post.post_title}}</h3></a>
+                <a href="{% url 'news_post' post.id %}" class="read-more-link title"><h3 class="title">{{post.post_title}}</h3></a>
                 <h4 class="author">{{post.post_author}}</h4>
                 <p class="post-date">{{ post.post_date }}</p>
-                <p class="teaser first-para"> Lorem ipsum dolor sit amet consectetur adipisicing  <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
+                <p class="teaser first-para"> Lorem ipsum dolor sit amet consectetur adipisicing  <a href="{% url 'news_post' post.id %}" class="read-more-link"><em> Read
                     more </em> <span class="read-more-arrow">&#10150;</span></a> </p>
             </section>
             {% endfor %}
