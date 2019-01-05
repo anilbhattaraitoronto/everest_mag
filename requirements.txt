@@ -4,3 +4,5 @@ django-js-asset==1.1.0
 django-tinymce==2.7.0
 Pillow==5.3.0
 pytz==2018.7
+psycopg2==2.7.5
+psycopg2-binary==2.7.5
