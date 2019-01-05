@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Album, Video
+from .models import Post, Album, Video, Advert
 
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
@@ -16,6 +16,11 @@ class VideoAdmin(admin.ModelAdmin):
     list_display=['title']
     list_display_links=['title']
 
+class AdvertAdmin(admin.ModelAdmin):
+    list_display=['title']
+    list_display_links=['title']
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Video, VideoAdmin)
+admin.site.register(Advert, AdvertAdmin)

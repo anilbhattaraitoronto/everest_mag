@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'tinymce',
     'ckeditor',
     'accounts.apps.AccountsConfig',
     'posts.apps.PostsConfig',
@@ -128,3 +129,20 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
+# CKEditor settings
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+# This ensures you have all toolbar icons
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+
+  }

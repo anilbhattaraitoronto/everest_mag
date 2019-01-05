@@ -1,10 +1,40 @@
 {% extends 'base.html' %}
 {% block title %} Welcome {% endblock title %}
 {% block content %}
-<section class="ad1">
-        <p>Advertisements go here</p>
-    </section>
+    
+
     <main class="wrapper">
+    
+    {% if advert1 %}
+        <section class="ad1">
+            <p>Advertisements go here</p>
+        </section>
+    {% endif %}
+        <!--EVENTS SECTION BEGINS BELOW-->
+        <section class="event-section">
+            
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="items">
+                {% if upcoming_events %}
+                {% for event in upcoming_events %}
+                <section class="item-section">
+                    <h6 class="item-type">{{event.post_type}}</h6>
+                    <h3 class="title">{{ event.post_title }}</h3>
+                    <h4 class="event-date">{{ event.event_date }}</h4>
+                    {% if event.post_photo_1 %}
+                    <div class="item-image">
+                        <img src="{{ event.post_photo_1.url}}" alt="Event Photo" class="item-image">
+                    </div>
+                    {% endif %}
+                    {{ event.content|safe|truncatewords:8 }} <a href="{% url 'post' event.id %}" class="read-more-link"><em> Read
+                            more </em> <span class="read-more-arrow">&#10150;</span></a>
+                </section>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </section>
+             <!--EVENTS SECTION ENDS-->
+            
 
         <!--NEWS SECTION BEGINS BELOW-->
     <section class="news-section">
@@ -21,8 +51,8 @@
                     <img src="{{ post.post_photo_1.url }}" alt="front-page photo" class="item-image">
                 </div>
                 {% endif %}
-                <p class="teaser first-para"> Lorem ipsum dolor sit amet consectetur adipisicing  <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
-                    more </em> <span class="read-more-arrow">&#10150;</span></a> </p>
+                {{ post.content|truncatewords:8|safe }} <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
+                    more </em> <span class="read-more-arrow">&#10150;</span></a>
             </section>
             {% endfor %}
             {% endif %}
@@ -30,36 +60,15 @@
     </section>
         <!--NEWS SECTION ENDS-->
 
-         <!--OPINION SECTION BEGINS BELOW-->
-     <section class="opinion-section">   
-        <h2 class="section-title">Opinion</h2>
-        <div class="items">
-            {% if opinion_posts %}
-            {% for post in opinion_posts %}
-            <section class="item-section">
-                <h6 class="item-type">{{post.post_type}}</h6>
-                <h3 class="title">{{post.post_title}}</h3>
-                <h4 class="author">{{post.post_author}}</h4>
-                {% if post.post_photo_1 %}
-                <div class="item-image">
-                    <img src="{{post.post_photo_1.url}}" alt="" class="item-image">
-                </div>
-                {% endif %}
-                <p class="teaser first-para"> Lorem ipsum dolor sit amet consectetur adipisicing  <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
-                    more </em> <span class="read-more-arrow">&#10150;</span></a> </p>
-            </section>
-            {% endfor %}
-            {% endif %}
-            
-        </div>
-    </section>
-         <!--OPINION SECTION ENDS-->
+         
 
          <!--IMAGE GALLERY SECTION BEGINS BELOW-->
     <section class="image-gallery-section">
+        {% if advert2 %}
         <div class="ad">
             <p>Advertisements Go here</p>
         </div>
+        {% endif %}
         <h2 class="section-title">Albums</h2>
         {% if albums %}
         {% for album in albums %}
@@ -77,46 +86,60 @@
 
          <!--VIDEO SECTION BEGINS BELOW-->
     <section class="video-gallery-section">
+        {% if advert3 %}
         <div class="ad">
             <p>Advertisements Go here</p>
         </div>
+        {% endif %}
         <h2 class="section-title">Videos</h2>
         {% if videos %}
+        <div class="videos">
         {% for video in videos %}
-        <div class="items">
-                <iframe src="{{video.video}}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        <div class="video-items">
+            <h3 class="sub-section-title">{{ video.title }}</h3>
+            
+                <div class="iframe-video">
+                    <iframe src="{{video.video}}" frameborder="0" allow="accelerometer; encrypted-media;" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+       
         {% endfor %}
+    </div>
         {% endif %}
     </section>
          <!--VIDEO SECTION ENDS-->
-
-         <!--EVENTS SECTION BEGINS BELOW-->
-    <section class="event-section">
-        <div class="ad">
-            <p>Advertisements Go here</p>
-        </div>
-        <h2 class="section-title">Events</h2>
-        <div class="items">
-            {% if upcoming_events %}
-            {% for event in upcoming_events %}
-            <section class="item-section">
-                <h6 class="item-type">{{event.post_type}}</h6>
-                <h3 class="title">{{ event.post_title }}</h3>
-                <h4 class="event-date">{{ event.event_date }}</h4>
-                {% if event.post_photo_1 %}
-                <div class="item-image">
-                    <img src="{{ event.post_photo_1.url}}" alt="Event Photo" class="item-image">
-                </div>
+    
+         <!--OPINION SECTION BEGINS BELOW-->
+     <section class="opinion-section">   
+            <h2 class="section-title">Opinion</h2>
+            <div class="items">
+                {% if opinion_posts %}
+                {% for post in opinion_posts %}
+                <section class="item-section">
+                    <h6 class="item-type">{{post.post_type}}</h6>
+                    <h3 class="title">{{post.post_title}}</h3>
+                    <h4 class="author">{{post.post_author}}</h4>
+                    {% if post.post_photo_1 %}
+                    <div class="item-image">
+                        <img src="{{post.post_photo_1.url}}" alt="" class="item-image">
+                    </div>
+                    {% endif %}
+                    {{ post.content|truncatewords:8|safe }} <a href="{% url 'post' post.id %}" class="read-more-link"><em> Read
+                        more </em> <span class="read-more-arrow">&#10150;</span></a> 
+                </section>
+                {% endfor %}
                 {% endif %}
-                <p class="teaser first-para"> Lorem ipsum dolor sit amet consectetur adipisicing  <a href="{% url 'post' event.id %}" class="read-more-link"><em> Read
-                        more </em> <span class="read-more-arrow">&#10150;</span></a> </p>
-            </section>
-            {% endfor %}
-            {% endif %}
-        </div>
-    </section>
-         <!--EVENTS SECTION ENDS-->
+            </div>
+            {% if advert4 %}
+            <section class="ad">
+                    <p>Advertisements Go here</p>
+             </section>
+             {% endif %}
+        </section>
+             <!--OPINION SECTION ENDS-->
+             
+         
          {% include 'partials/_editorial_team.html' %}
 </main>
 {% endblock %}

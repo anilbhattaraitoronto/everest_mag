@@ -4,17 +4,16 @@
 
 {% block content %}
 
-<h2 class="section-title">Login</h2>
+<h2 class="section-title form-title">Login</h2>
 
-<div class="register-form auth-form">
+<div class="login-form auth-form">
         <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
             <label for="username">Username</label>
             <input type="text" name="username" placeholder="Username">
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="Password">
-            <label for="" class="empty-label"></label>
-            <input type="submit" value="Login">
+            <button>Login To Your Account</button>
         </form>
     </div>
     {% endblock %}

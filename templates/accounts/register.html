@@ -4,7 +4,7 @@
 {% block title %} | Register {% endblock %}
 
 {% block content %}
-<h2 class="section-title">Register</h2>
+<h2 class="section-title form-title">Register</h2>
 
 <div class="register-form auth-form">
     <form action="{% url 'register' %}" method="POST">
@@ -21,8 +21,7 @@
         <input type="password" name="password" placeholder="Password">
         <label for="confirm_password">Confirm Password</label>
         <input type="password" name="confirm_password" placeholder="Confirm Password">
-        <label for="" class="empty-label"></label>
-        <input type="submit" value="Register Account">
+        <button>Register Account</button>
     </form>
 </div>
 {% endblock %}

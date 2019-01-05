@@ -11,6 +11,9 @@ body{
     margin: auto;
     width: 100%;
 }
+p{
+    padding: 15px 0;
+}
 .auth-nav{
     display: flex;
     justify-content: right;
@@ -126,7 +129,6 @@ body{
 .teaser{
     grid-area: 4/2/ span 1/ span 1;
     font-size: 1.1rem;
-    padding-bottom: 5px;
 }
 .read-more-arrow{
     float: right;
