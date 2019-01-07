@@ -1,0 +1,50 @@
+This is a user manual for admin staff of this site
+
+1) You have to be one of the admin staffs to use this site as an administrator
+2) The first step: you have to be registered as a user. Once you are a user, the existing admin staff can upgrade you to an admin staff member through backend.
+3) Once you have admin privilege and you sign in to the site with your username and password, you will see the link 'Admin' on the topbar. This link will not be shown to non-admin users.
+4) Clicking the link takes you to this site's admin area, where you can:
+-create new items (for now, posts, albums, videos, adverts, other users, and groups)
+-delete those items
+-edit those items
+-save and publish those items (barring the 'users')
+
+Advertisements
+-there are six slots for advertisements on this site. 
+-those slots will be visible only when there are advertiments created for those particular slots.
+-the first four slots have levels: first, second, third, fourth
+-the remaining two slots have levels inner first, inner second;
+The first four slots are on our homepage, starting from below the main menu/navigation bar;
+The last two slots are in the inner pages. Actually, we can put them on all inner pages we create. 
+
+Creating Items:
+-The creation of News, Events, and Opinion Pieces are done through a content management editing area. It is a smaller version of writing software called CKEditor
+-Creation of Albums is straightforward: you give it a title in the designated area, and upload four pictures. 
+-Creation of Videos: Here, you just have to do two things: 1) Give it a title, 2) copy the youtube video source. The second part requires accessing embed source from youtube. For that you do the following:
+
+--go to the youtube video you want to embed;
+--click share
+-click 'embed' which brings up a bunch of texts
+-here, ONLY copy the items inside the src attribute, excluding the quotes between the link. 
+
+e.g. src=" https://youtube.............."
+
+Just to reiterate: DO NOT COPY the quotes. COPY only the link inside the quote. Do not copy any other items from the embed details. 
+
+Best Practices
+
+-Please have a site's youtube channel and google photo site so that we do not have to store our videos and photos on our site. 
+
+--please try to edit the photos into smaller size than the original. That makes the site load faster and also is easy on our users' data. 
+
+SITE DESCRIPTION
+
+-This site shows dynamically generated contents. 
+-The news, events, opinions and others designated as 'latest' are shown on the Home page with link to details. 
+-The 'event', 'album', 'video' items DO NOT have separate list page; The events are too ephemeral to be stored in our site and for albums and videos, we would be better off providing a link to other storing sites such as Youtube and Google photos
+
+-Only advertisements that are designated as 'live' are shown on pages. Live is designated in the backend while creating them, by clicking the checkbox 'is_live'. When we uncheck this, it is no longer available for the page. We can keep some unused ads on our backend and we might be able to use them if clients want to have them on our site. We can also remove them if they are not live anymore. 
+
+
+
+

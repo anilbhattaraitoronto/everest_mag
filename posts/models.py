@@ -17,7 +17,7 @@ class Post (models.Model):
     post_date = models.DateTimeField(verbose_name='Posted Date', blank=True)
     post_photo_1=models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     content=RichTextField()
-    event_date=models.CharField(max_length=50)
+    event_date=models.CharField(max_length=50, blank=True)
     
     def __str__(self):
         return self.post_title
