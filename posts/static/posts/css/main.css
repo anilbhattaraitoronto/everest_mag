@@ -75,7 +75,7 @@ p{
     font-weight: bold;
 }
 .main-nav a:hover{
-    background: var(--theme-color3);
+    background: var(--theme-color1);
 }
 .ad{
     display: grid;
