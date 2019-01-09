@@ -200,14 +200,14 @@ p{
     width: 100%;
     object-fit: cover;
 }
-.prev, .next {
+.prev, .next, .prev-video, .next-video {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
     margin-top: -32px;
     padding: 16px;
-    color: white;
+    color: rgba(0,0,0,.8);
     font-weight: bold;
     font-size: 28px;
     transition: 0.6s ease;
@@ -219,13 +219,21 @@ p{
     right: 0;
     border-radius: 3px 0 0 3px;
   }
+  .next-video{
+      right: 20px;
+      border-radius: 3px 0 0 3px;
+  }
   .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
+  }
+  .prev-video:hover, .next-video:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
   }
 .slide-indicators{
    text-align: center;
 }
-.slide-indicator{
+.slide-indicator, .video-indicator{
         cursor: pointer;
         height: 15px;
         width: 15px;
@@ -236,8 +244,8 @@ p{
         transition: background-color 0.6s ease;
 }
 
-.active, .slide-indicator:hover {
-    background-color: #717171;
+.active, .active-video, .slide-indicator:hover, .video-indicator:hover {
+    background-color: #4b4747;
   }
   
   /* Fading animation */
@@ -263,8 +271,9 @@ p{
     text-align: center;
 }
 .videos{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
+    position: relative;
     margin: auto;
 }
 .video-items{

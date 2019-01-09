@@ -112,11 +112,19 @@
             
                 <div class="iframe-video">
                     <iframe src="{{video.video}}" frameborder="0" allow="accelerometer; encrypted-media;" allowfullscreen></iframe>
+            
                 </div>
             </div>
             
-       
+            
         {% endfor %}
+        <a class="prev-video" onclick="plusVideos(-1)">&#10094</a>
+            <a class="next-video" onclick="plusVideos(1)">&#10095</a>
+        <div class="slide-indicators">
+            <span class="video-indicator" onclick="currentVideo(1)"></span>
+            <span class="video-indicator" onclick="currentVideo(2)"></span>
+            <span class="video-indicator" onclick="currentVideo(3)"></span>
+        </div>
     </div>
         {% endif %}
     </section>
