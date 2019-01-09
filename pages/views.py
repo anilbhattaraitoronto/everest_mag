@@ -7,7 +7,7 @@ def index(request):
     opinion_posts = Post.objects.all().filter(post_type='Opinion')[:3]
     albums = Album.objects.all().filter(is_latest=True)
     upcoming_events = Post.objects.all().filter(post_type='Event')[:3]
-    videos = Video.objects.all().filter(is_latest=True)
+    videos = Video.objects.all().filter(is_latest=True)[:3]
     advert_set=Advert.objects.all()
     advert1=advert_set.filter(priority='First', is_live=True)
     advert2=advert_set.filter(priority='Second', is_live=True)
