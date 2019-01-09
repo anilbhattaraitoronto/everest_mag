@@ -14,16 +14,13 @@
 {% endfor %}
 {% endif %}
     <main class="wrapper">
-        
         <!--EVENTS SECTION BEGINS BELOW-->
         <section class="event-section">
-              
-            
             <h2 class="section-title">Upcoming Events</h2>
             <div class="items">
                 {% if upcoming_events %}
                 {% for event in upcoming_events %}
-                <section class="item-section">
+                <section class="item-section event-item">
                     <h6 class="item-type">{{event.post_type}}</h6>
                     <h3 class="title">{{ event.post_title }}</h3>
                     <h4 class="event-date">{{ event.event_date }}</h4>
@@ -48,7 +45,7 @@
         <div class="items">
             {% if news_posts %}
             {% for post in news_posts %}
-            <section class="item-section">
+            <section class="item-section news-item">
                 <h6 class="item-type">{{ post.post_type }}</h6>
                 <h3 class="title">{{ post.post_title }}</h3>
                 <h4 class="author">{{post.post_author}}</h4>
@@ -79,11 +76,20 @@
         {% if albums %}
         {% for album in albums %}
         <h3 class="sub-section-title">{{album.title}}</h3>
-        <div class="image-gallery">
-            <img src="{{album.image_1.url}}" alt="">
-            <img src="{{album.image_2.url}}" alt="">
-            <img src="{{album.image_3.url}}" alt="">
-            <img src="{{album.image_4.url}}" alt="">
+        
+        <div class="image-gallery">       
+            <img src="{{album.image_1.url}}" alt="" class="gallery-image fade">
+            <img src="{{album.image_2.url}}" alt="" class="gallery-image fade">
+            <img src="{{album.image_3.url}}" alt="" class="gallery-image fade">
+            <img src="{{album.image_4.url}}" alt="" class="gallery-image fade">
+            <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+            <a class="next" onclick="plusSlides(1)">&#10095</a>
+        </div>
+        <div class="slide-indicators">
+            <span class="slide-indicator" onclick="currentSlide(1)"></span>
+            <span class="slide-indicator" onclick="currentSlide(2)"></span>
+            <span class="slide-indicator" onclick="currentSlide(3)"></span>
+            <span class="slide-indicator" onclick="currentSlide(4)"></span>
         </div>
         {% endfor %}
         {% endif %}
