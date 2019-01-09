@@ -420,6 +420,9 @@ footer{
     .image-gallery-section{
         grid-area: 2/3 /span 1/ span 1;
     }
+    .editorial-section{
+        grid-area: 2/2/ span 1/span 1;
+    }
     .video-gallery-section{
         grid-area: 2/1 /span 1/ span 1;
     }
