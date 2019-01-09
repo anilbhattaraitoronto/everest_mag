@@ -1,7 +1,9 @@
 var slideIndex = 1;
 var videoIndex = 1;
-showSlides(slideIndex);
 showVideos(videoIndex);
+showSlides(slideIndex);
+
+
 
 // Next/previous controls
 function plusSlides(n) {
