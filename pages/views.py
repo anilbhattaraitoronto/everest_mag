@@ -5,6 +5,7 @@ from posts.models import Post, Album, Video, Advert
 def index(request):
     news_posts = Post.objects.all().filter(post_type='News')[:3]
     opinion_posts = Post.objects.all().filter(post_type='Opinion')[:3]
+    editorial_posts = Post.objects.all().filter(post_type='Editorial')[:1]
     albums = Album.objects.all().filter(is_latest=True)
     upcoming_events = Post.objects.all().filter(post_type='Event')[:3]
     videos = Video.objects.all().filter(is_latest=True)[:3]

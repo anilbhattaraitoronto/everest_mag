@@ -158,6 +158,35 @@
              {% endif %}
         </section>
              <!--OPINION SECTION ENDS-->
+         <!--Editorial SECTION BEGINS BELOW-->
+     <section class="editorial-section">   
+        <a href="{% url 'opinion' %}"> <h2 class="section-title">Editorial</h2></a>
+         <div class="items">
+             {% if opinion_posts %}
+             {% for post in opinion_posts %}
+             <section class="item-section">
+                 <h6 class="item-type">{{post.post_type}}</h6>
+                 <h3 class="title">{{post.post_title}}</h3>
+                 {% if post.post_author %}
+                 <h4 class="author">{{post.post_author}}</h4>
+                 {% endif %}
+                 {% if post.post_photo_1 %}
+                 <div class="item-image">
+                     <img src="{{post.post_photo_1.url}}" alt="" class="item-image">
+                 </div>
+                 {% endif %}
+                 {{ post.content|safe }}  
+             </section>
+             {% endfor %}
+             {% endif %}
+         </div>
+         {% if advert4 %}
+         <section class="ad">
+                 <p>Advertisements Go here</p>
+          </section>
+          {% endif %}
+     </section>
+          <!--EDITORIAL SECTION ENDS-->
              
          
          {% include 'partials/_editorial_team.html' %}
