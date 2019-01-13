@@ -27,7 +27,6 @@ DEBUG=True
 # Application definition
 
 INSTALLED_APPS = [
-    'tinymce',
     'ckeditor',
     'pages.apps.PagesConfig',
     'accounts.apps.AccountsConfig',

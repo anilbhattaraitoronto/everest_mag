@@ -2,10 +2,10 @@
     box-sizing: border-box;
     margin:0;
     padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    --theme-color1: rgb(39, 18, 105);
-    --theme-color2: rgb(85, 6, 22);
-    --theme-color3: rgb(60, 117, 79);
+    font-family: Arial;
+   
+    --theme-color1: rgb(194, 47, 11);
+    --theme-color2: rgb(15, 48, 138);
 }
 body{
     max-width: 1300px;
@@ -19,7 +19,7 @@ p{
 .page-title{
     padding: 20px 0;
     text-align: center;
-    color: var(--theme-color2);
+    color: var(--theme-color1);
     border-bottom: 2px solid lightgray;
     margin-bottom: 40px;
     font-size: 2rem;
@@ -28,7 +28,7 @@ p{
 .auth-nav{
     display: flex;
     justify-content: right;
-    background: var(--theme-color1);
+    background: var(--theme-color2);
    
 }
 .auth-nav a{
@@ -50,14 +50,7 @@ p{
     max-width: 370px;
     max-height: 160px;
 }
-.main-header h1::after{
-    display: block;
-    content: "A Publication of TAS Everest Media Production Home (TEMPH)";
-    font-size: .9rem;
-    text-align: center;
-    color: var(--theme-color3);
-    font-style: italic;
-}
+
 .main-header p{
     text-align: center;
     padding-top: 20px;
@@ -109,13 +102,13 @@ p{
 }
 .ad-description{
     grid-area: 2/1/span 1/span 1;
-    border: 1px solid var(--theme-color3);
+    border: 1px solid var(--theme-color2);
     padding: 10px;
 }
 .ad-contact{
     grid-area: 3/2/span 1/span 1;
     text-align: right;
-    border: 1px solid var(--theme-color3);
+    border: 1px solid var(--theme-color2);
     padding: 10px;
 }
 .wrapper{
@@ -125,9 +118,9 @@ p{
 .section-title {
     text-align: center;
     /* background: linear-gradient(to right, var(--theme-color1), var(--theme-color3), var(--theme-color2)); */
-    color: var(--theme-color2);
+    color: var(--theme-color1);
     max-width: fit-content;
-    border-bottom: 3px solid var(--theme-color3);
+    border-bottom: 3px solid var(--theme-color2);
     margin: 30px auto;
     text-transform: uppercase;
 }
@@ -157,7 +150,7 @@ p{
 }
 .author, .event-date{
     grid-area: 3/2/ span 1/span 1;
-    color: var(--theme-color3);
+    color: var(--theme-color2);
     font-style: italic;
 }
 .teaser{
@@ -229,7 +222,7 @@ p{
   }
   .prev-video:hover, .next-video:hover {
     background-color: rgba(0,0,0,0.8);
-    color: white;
+    color: rgb(160, 140, 140);
   }
 .slide-indicators{
    text-align: center;
@@ -306,7 +299,7 @@ p{
 footer{
     padding: 40px 0;
     text-align: center;
-    background: var(--theme-color3);
+    background: var(--theme-color2);
     margin-top: 20px;
     color: white;
 }

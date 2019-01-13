@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import datetime
 from ckeditor.fields import RichTextField
-from tinymce.models import HTMLField
 
 class Post (models.Model):
     TYPES = (

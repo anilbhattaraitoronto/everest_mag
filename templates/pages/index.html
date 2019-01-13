@@ -2,25 +2,10 @@
 {% block title %} Welcome {% endblock title %}
 {% block content %}
     
-{% if advert1 %}
-{% for advert in advert1 %}
-<section class="ad">
-    <h3 class="ad-title">{{ advert.title }}</h3>
-    <img src="{{ advert.photo_1.url }}" alt="Ad Image" class="ad-image1">
-    <p class="ad-description">{{ advert.description }}</p>
-    <img src="{{ advert.photo_2.url }}" alt="Ad Image" class="ad-image2">
-    <p class="ad-contact">{{ advert.contact_info }}</p>
-</section>
-{% endfor %}
-{% else %}
-<section class="ad">
-    <p>Advertise with us. This Space is available</p>
-</section>
-{% endif %}
     <main class="wrapper">
         <!--EVENTS SECTION BEGINS BELOW-->
         <section class="event-section">
-            <h2 class="section-title">Upcoming Events</h2>
+            <h2 class="section-title">Events</h2>
             <div class="items">
                 {% if upcoming_events %}
                 {% for event in upcoming_events %}
@@ -71,15 +56,6 @@
 
          <!--IMAGE GALLERY SECTION BEGINS BELOW-->
     <section class="image-gallery-section">
-        {% if advert2 %}
-        <div class="ad">
-            <p>Advertisements Go here</p>
-        </div>
-        {% else %}
-        <div class="ad">
-                <p>Advertise with us. This space is available.</p>
-            </div>
-        {% endif %}
         <h2 class="section-title">Albums</h2>
         {% if albums %}
         {% for album in albums %}
@@ -106,16 +82,6 @@
 
          <!--VIDEO SECTION BEGINS BELOW-->
     <section class="video-gallery-section">
-        {% if advert3 %}
-        <div class="ad">
-            <p>Advertisements Go here</p>
-        </div>
-        {% else %}
-        <div class="ad">
-            <p>Advertise with us. This space is available</p>
-
-        </div>
-        {% endif %}
         <h2 class="section-title">Videos</h2>
         {% if videos %}
         <div class="videos">
@@ -164,15 +130,6 @@
                 {% endfor %}
                 {% endif %}
             </div>
-            {% if advert4 %}
-            <section class="ad">
-                    <p>Advertisements Go here</p>
-             </section>
-             {% else %}
-             <section class="ad">
-                    <p>Advertise with us. This space is available</p>
-             </section>
-             {% endif %}
         </section>
              <!--OPINION SECTION ENDS-->
          <!--Editorial SECTION BEGINS BELOW-->
@@ -197,11 +154,6 @@
              {% endfor %}
              {% endif %}
          </div>
-         {% if advert4 %}
-         <section class="ad">
-                 <p>Advertisements Go here</p>
-          </section>
-          {% endif %}
      </section>
           <!--EDITORIAL SECTION ENDS-->
              
