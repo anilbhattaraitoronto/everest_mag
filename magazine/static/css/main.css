@@ -87,6 +87,7 @@ p{
     grid-gap: 10px;
     border-bottom: 1px solid var(--theme-color1);
     margin-bottom: 30px;
+    background: green;
 }
 .ad:hover{
     box-shadow: 2px 2px 18px var(--theme-color2);

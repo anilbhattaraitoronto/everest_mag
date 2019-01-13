@@ -12,6 +12,10 @@
     <p class="ad-contact">{{ advert.contact_info }}</p>
 </section>
 {% endfor %}
+{% else %}
+<section class="ad">
+    <p>Advertise with us. This Space is available</p>
+</section>
 {% endif %}
     <main class="wrapper">
         <!--EVENTS SECTION BEGINS BELOW-->
@@ -71,6 +75,10 @@
         <div class="ad">
             <p>Advertisements Go here</p>
         </div>
+        {% else %}
+        <div class="ad">
+                <p>Advertise with us. This space is available.</p>
+            </div>
         {% endif %}
         <h2 class="section-title">Albums</h2>
         {% if albums %}
@@ -101,6 +109,11 @@
         {% if advert3 %}
         <div class="ad">
             <p>Advertisements Go here</p>
+        </div>
+        {% else %}
+        <div class="ad">
+            <p>Advertise with us. This space is available</p>
+
         </div>
         {% endif %}
         <h2 class="section-title">Videos</h2>
@@ -154,6 +167,10 @@
             {% if advert4 %}
             <section class="ad">
                     <p>Advertisements Go here</p>
+             </section>
+             {% else %}
+             <section class="ad">
+                    <p>Advertise with us. This space is available</p>
              </section>
              {% endif %}
         </section>
