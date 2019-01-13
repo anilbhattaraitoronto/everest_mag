@@ -42,21 +42,9 @@ class Video(models.Model):
         return self.title
     
 class Advert(models.Model):
-    PRIORITY=(
-        ('First', 'First'),
-        ('Second', 'Second'),
-        ('Third', 'Third'),
-        ('Fourth', 'Fourth'),
-        ('Fifth', 'Fifth'),
-        ('Sixth', 'Sixth'),
-    )
+    title = models.CharField(max_length=20)
     is_live=models.BooleanField(default=False)
-    priority=models.CharField(choices=PRIORITY, default='First', max_length=7)
-    title=models.CharField(max_length=50)
     photo_1=models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-    photo_2=models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-    description=models.TextField()
-    contact_info=models.TextField()
 
     def __str__(self):
         return self.title

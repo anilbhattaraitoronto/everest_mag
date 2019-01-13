@@ -23,13 +23,14 @@ Creating Items:
 -Creation of Videos: Here, you just have to do two things: 1) Give it a title, 2) copy the youtube video source. The second part requires accessing embed source from youtube. For that you do the following:
 
 --go to the youtube video you want to embed;
---click share
+--click 'share'
 -click 'embed' which brings up a bunch of texts
 -here, ONLY copy the items inside the src attribute, excluding the quotes between the link. 
 
 e.g. src=" https://youtube.............."
 
 Just to reiterate: DO NOT COPY the quotes. COPY only the link inside the quote. Do not copy any other items from the embed details. 
+Paste that link source on the field below title. Video will display on front page. 
 
 Best Practices
 
@@ -43,7 +44,7 @@ SITE DESCRIPTION
 -The news, events, opinions and others designated as 'latest' are shown on the Home page with link to details. 
 -The 'event', 'album', 'video' items DO NOT have separate list page; The events are too ephemeral to be stored in our site and for albums and videos, we would be better off providing a link to other storing sites such as Youtube and Google photos
 
--Only advertisements that are designated as 'live' are shown on pages. Live is designated in the backend while creating them, by clicking the checkbox 'is_live'. When we uncheck this, it is no longer available for the page. We can keep some unused ads on our backend and we might be able to use them if clients want to have them on our site. We can also remove them if they are not live anymore. 
+-Only advertisements that are designated as 'live' are shown on pages. Live is designated in the backend while creating them, by clicking the checkbox 'is_live'. When we uncheck this, it is no longer available for the page. We can keep some unused ads on our backend and we might be able to use them if clients want to have them on our site again. We can also remove them if they are not live anymore and clients are unlikely to use that advert on our site. 
 
 
 
